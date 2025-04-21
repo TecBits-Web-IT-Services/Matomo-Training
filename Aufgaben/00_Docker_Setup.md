@@ -39,16 +39,7 @@ sudo apt install -y docker-compose
 
 Nach der Installation müssen Sie sich ab- und wieder anmelden, damit die Gruppenänderungen wirksam werden.
 
-## 2. Vorbereitung der Projektstruktur
-
-Erstellen Sie ein Verzeichnis für das Projekt und wechseln Sie in dieses Verzeichnis:
-
-```bash
-mkdir -p ~/matomo-wordpress-schulung
-cd ~/matomo-wordpress-schulung
-```
-
-## 3. Prüfen der Docker Installation
+## 2. Prüfen der Docker Installation
 
 ```bash
 docker run hello-world
