@@ -39,8 +39,12 @@
    ```bash
    docker compose ps
    ```
-   
-   **Aufgabe**: Notieren Sie die Status und Ports aller laufenden Container.
+
+5. Auslesen des MYSQL Root Passworts
+    ```bash
+    docker compose logs | grep GENERATED
+    ```
+   Notieren Sie sich das Passwort aus der Zeile, welche "GENERATED ROOT PASSWORD" enthält. 
 
 ### Teil 2: Ersteinrichtung von WordPress
 

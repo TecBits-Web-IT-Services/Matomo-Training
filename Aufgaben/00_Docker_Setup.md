@@ -16,25 +16,28 @@ Falls Docker und Docker Compose noch nicht installiert sind, führen Sie die fol
 sudo apt update
 
 # Installation notwendiger Pakete
-sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
+sudo apt-get install ca-certificates curl
 
 # Hinzufügen des Docker GPG-Schlüssels
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
 
 # Hinzufügen des Docker-Repositorys
-echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 # Aktualisieren der Paketlisten mit dem neuen Repository
 sudo apt update
 
 # Installation von Docker
-sudo apt install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 # Hinzufügen des aktuellen Benutzers zur Docker-Gruppe (erfordert Neuanmeldung)
 sudo usermod -aG docker $USER
 
-# Installation von Docker Compose
-sudo apt install -y docker-compose
 ```
 
 Nach der Installation müssen Sie sich ab- und wieder anmelden, damit die Gruppenänderungen wirksam werden.
@@ -63,10 +66,10 @@ To generate this message, Docker took the following steps:
 ## Fehlerbehebung
 
 ### Problem: Container starten nicht
-Lösung: Überprüfen Sie die Logs mit `docker-compose logs`
+Lösung: Überprüfen Sie die Logs mit `docker compose logs`
 
 ### Problem: Keine Verbindung zur Datenbank
 Lösung: Stellen Sie sicher, dass der Datenbankcontainer läuft und die Umgebungsvariablen korrekt sind
 
 ### Problem: Ports sind bereits belegt
-Lösung: Ändern Sie die Ports in der docker-compose.yml Datei (z.B. 8082:80 statt 8080:80)
+Lösung: Ändern Sie die Ports in der docker compose.yml Datei (z.B. 8082:80 statt 8080:80)
