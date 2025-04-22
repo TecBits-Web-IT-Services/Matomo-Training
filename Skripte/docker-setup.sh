@@ -24,5 +24,4 @@ sudo apt update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 # Hinzufügen des aktuellen Benutzers zur Docker-Gruppe (erfordert Neuanmeldung)
-sudo usermod -aG docker $USER
 sudo usermod -aG docker student

@@ -7,7 +7,21 @@ Diese Anleitung führt Sie durch die Installation und Konfiguration von Docker a
 - Ubuntu Desktop 24.04
 - Grundlegende Kenntnisse der Kommandozeile
 
-## 1. Installation von Docker und Docker Compose
+## Variante 1a. Automatische Installation auf von uns bereitgestellten Testrechnern
+
+Öffnen Sie die Linux Kommandozeile (Terminal) und führen Sie folgende Befehle aus:
+```bash
+sudo su
+
+wget https://raw.githubusercontent.com/TecBits-Web-IT-Services/Matomo-Training/main/Skripte/docker-setup.sh &&\
+ chmod +x docker-setup.sh &&\
+ ./docker-setup.sh
+```
+> Hinweis:
+> 
+> Nach der ausführung des Scriptes müssen Sie sich einmal ab- und wieder anmelden damit die neue Gruppenzuweisung zum tragen kommt. 
+
+## Variante 1b. Manuelle Installation von Docker und zuweisen der Benutzergruppe
 
 Falls Docker und Docker Compose noch nicht installiert sind, führen Sie die folgenden Befehle aus:
 
@@ -35,12 +49,13 @@ sudo apt update
 # Installation von Docker
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
-# Hinzufügen des aktuellen Benutzers zur Docker-Gruppe (erfordert Neuanmeldung)
-sudo usermod -aG docker $USER
+# Hinzufügen des aktuellen Benutzers zur Docker-Gruppe (erfordert Neuanmeldung), in unserem Fall ist der Benutzer "student".
+sudo usermod -aG docker student
 
 ```
-
-Nach der Installation müssen Sie sich ab- und wieder anmelden, damit die Gruppenänderungen wirksam werden.
+> Hinweis:
+>
+> Nach der ausführung des Scriptes müssen Sie sich einmal ab- und wieder anmelden damit die neue Gruppenzuweisung zum tragen kommt.
 
 ## 2. Prüfen der Docker Installation
 

@@ -13,8 +13,9 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - run: mkdir ${{ github.workspace }}/Release/Aufgaben -p && mkdir ${{ github.workspace }}/Release/Testdaten
+      - run: mkdir ${{ github.workspace }}/Release/Aufgaben -p && mkdir ${{ github.workspace }}/Release/Testdaten && mkdir ${{ github.workspace }}/Release/Skripte
       - run: cp -R ${{ github.workspace }}/Beispielkonfigurationen ${{ github.workspace }}/Release/
+      - run: cp -R ${{ github.workspace }}/Skripte ${{ github.workspace }}/Release/
       - name: generate Documents
         uses: baileyjm02/markdown-to-pdf@v1
         with:
@@ -42,7 +43,7 @@ jobs:
       - name: create release
         uses: ncipollo/release-action@v1.12.0
         with:
-          artifacts: "release.zip,docker-setup.sh"
+          artifacts: "release.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
           makeLatest: true
           body: Dieser Release enthält den aktuellsten Stand der Testdaten und Übungsaufgaben.
