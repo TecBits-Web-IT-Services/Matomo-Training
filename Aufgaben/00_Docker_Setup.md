@@ -16,6 +16,8 @@ sudo su
 wget https://raw.githubusercontent.com/TecBits-Web-IT-Services/Matomo-Training/main/Skripte/docker-setup.sh &&\
  chmod +x docker-setup.sh &&\
  ./docker-setup.sh
+ 
+exit
 ```
 > Hinweis:
 > 
@@ -87,4 +89,4 @@ Lösung: Überprüfen Sie die Logs mit `docker compose logs`
 Lösung: Stellen Sie sicher, dass der Datenbankcontainer läuft und die Umgebungsvariablen korrekt sind
 
 ### Problem: Ports sind bereits belegt
-Lösung: Ändern Sie die Ports in der docker compose.yml Datei (z.B. 8082:80 statt 8080:80)
+Lösung: Ändern Sie die Ports in der docker-compose.yml Datei (z.B. 8082:80 statt 8080:80)

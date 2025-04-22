@@ -23,12 +23,12 @@
    cd ~/matomo-uebung
    ```
 
-2. Erstellen Sie eine Datei `docker compose.yml` mit dem bereitgestellten Inhalt:
+2. Erstellen Sie eine Datei `docker-compose.yml` mit dem bereitgestellten Inhalt:
    ```bash
-   nano docker compose.yml
+   nano docker-compose.yml
    ```
    
-   Fügen Sie den Inhalt aus der Datei **"Beispielkonfigurationen/Docker/docker compose.yml"** ein und speichern Sie die Datei (Strg+O, Enter, Strg+X).
+   Fügen Sie den Inhalt aus der Datei **"Beispielkonfigurationen/Docker/docker-compose.yml"** ein und speichern Sie die Datei (Strg+O, Enter, Strg+X).
 
 3. Starten Sie die Docker-Container:
    ```bash
@@ -140,6 +140,6 @@ Beantworten Sie folgende Fragen:
 
 ## Zusatzaufgaben (optional)
 
-1. Ändern Sie die Ports in der docker compose.yml Datei und starten Sie die Container neu.
+1. Ändern Sie die Ports in der docker-compose.yml Datei und starten Sie die Container neu.
 2. Richten Sie eine zweite Website in Matomo ein und vergleichen Sie die Änderungen in der Datenbank.
 3. Installieren Sie ein zusätzliches Plugin in Matomo über die Benutzeroberfläche.
