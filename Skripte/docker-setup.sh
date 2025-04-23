@@ -4,7 +4,7 @@
 sudo apt update
 
 # Installation notwendiger Pakete und einiger basics
-sudo apt-get install ca-certificates curl git nano mc htop
+sudo apt-get install -y ca-certificates curl git nano mc htop
 
 # Hinzufügen des Docker GPG-Schlüssels
 sudo install -m 0755 -d /etc/apt/keyrings
@@ -21,7 +21,7 @@ echo \
 sudo apt update
 
 # Installation von Docker
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 # Setup DDEV
 # Add DDEV’s GPG key to your keyring
