@@ -8,4 +8,4 @@ git clone https://github.com/TecBits-Web-IT-Services/Matomo-Training-Env.git
 cd Matomo-Training-Env
 
 ddev start
-ddev snapshot restore clean-wp-setup-with-wc-mariadb
+ddev snapshot restore clean-wp-setup-with-wc
