@@ -3,8 +3,8 @@
 #Aktualisieren der Paketlisten
 sudo apt update
 
-# Installation notwendiger Pakete
-sudo apt-get install ca-certificates curl
+# Installation notwendiger Pakete und einiger basics
+sudo apt-get install ca-certificates curl git nano mc htop
 
 # Hinzufügen des Docker GPG-Schlüssels
 sudo install -m 0755 -d /etc/apt/keyrings
