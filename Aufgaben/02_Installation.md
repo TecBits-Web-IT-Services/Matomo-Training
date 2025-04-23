@@ -106,7 +106,7 @@
 
 1. Verbinden Sie sich mit dem Datenbank-Container:
    ```bash
-   docker exec ddev-training-db mysql -u root -proot
+   docker exec -it ddev-training-db mysql -u root -proot
    ```
    
 2. Zeigen Sie sich alle Datenbanken an und identifizieren Sie die Matomo Datenbank
