@@ -31,47 +31,58 @@
 
 6. Fügen Sie den Matomo-Tracking-Code ein:
    - Navigieren Sie zu "Einstellungen" > "WP Headers and Footers"
-   - Fügen Sie den kopierten Tracking-Code in den Bereich "Skripte im Footer" ein
-   - Speichern Sie die Änderungen
+   - Fügen Sie den kopierten Tracking-Code in den Bereich "Skripte im Header" ein und Speichern Sie
+   - Wählen Sie den Tab Settings aus und setzen Sie den Wert für "Footers Priority" auf 999 und speichern Sie die Anpassung.
    
-   **Aufgabe**: Warum ist es besser, den Tracking-Code im Footer statt im Header einzufügen?
-
 7. Besuchen Sie Ihre WordPress-Website und führen Sie einige Aktionen durch (Seiten besuchen, Links klicken)
 
 8. Überprüfen Sie in Matomo, ob die Besuche aufgezeichnet wurden:
    - Navigieren Sie zu "Besucher" > "Echtzeit"
    - Überprüfen Sie die "Besucher-Logs"
 
-### Teil 2: Einrichtung des E-Commerce Trackings in Wordpress mit Woocommerce und Tracktastic
+### Teil 2: Einrichtung des E-Commerce Trackings in Wordpress mit Woocommerce und dem TecBits Plugin Trackster
 
 > Hinweis:
 > 
-> Aufgrund einer aktuellen Inkompatibilität in der Pluginversion im offiziellen Wordpress Repository funktioniert die
-> frei verfügbare Version des Plugins aktuell nicht, im Order "Beispielkonfigurationen > WP-Plugins" finden Sie eine angepasste Version
-> des Plugins. Bitte installieren Sie diese entgegen der unten beschriebenen Methode als ZIP Upload in Wordpress.
+> Die Umsetzung des E-Commerce Trackings kann ein relativ komplexes Thema sein und ist stark vom Trackingkonzept abhängig und davon
+> welche Events getrackt werden sollen.
+> Um die Übung kompakt zu halten, stellen wir Ihnen an dieser Stelle ein kleines Custom Plugin von uns bereit, welches ein Basis-Tracking
+> der Produkte, des Warenkorbs und der Käufe erlaubt. Normalerweise würde dazu ein auf den Shop zugeschnittenes Plugin verwendet,
+> welches auf die feinheiten des Shops eingeht.
 
-1. Installieren und aktivieren Sie das Plugin "Tracktastic: Free Matomo Integration for WooCommerce":
-   - Navigieren Sie zu "Plugins" > "Installieren"
-   - Suchen Sie nach "Tracktastic"
+1. Installieren und aktivieren Sie das Plugin "Trackster" aus dem Ordner Beispielkonfigurationen > WP-Plugin:
+   - Navigieren Sie zu "Plugins" > "Plugin hinzufügen"
+   - Auf der nächsten Seite wählen Sie ganz oben "Plugin Hochladen" und wählen Sie die Zip Datei aus dem oben angegebenen Verzeichnis
    - Klicken Sie auf "Jetzt installieren" und dann auf "Aktivieren"
+   - Für das Plugin ist keine weitere Konfiguration nötig
+
+2. Anpassung des Tracking Codes
+   -  Navigieren Sie zu "Einstellungen" > "WP Headers and Footers"
+   -  Entfernen Sie folgende Zeile aus dem Tracking Code im Bereich "Scripts in Header"
+   ```JS
+   _paq.push(['trackPageView']);
+   ```
+   - Fügen Sie folgendes Script im Bereich "Scripts in Footer" hinzu
+   ```HTML
+   <script>
+    _paq.push(['trackPageView']);
+   </script>
+   ```
    
-### Teil 5: Opt-Out und Datenschutz
+### Teil 3: Opt-Out und Datenschutz
 
-1. Konfigurieren Sie die Datenschutzoptionen im Connect Matomo-Plugin:
-   - Navigieren Sie zu "Einstellungen" > "Connect Matomo" > "Datenschutz"
-   - Aktivieren Sie "Opt-Out-Iframe anzeigen"
-   - Speichern Sie die Einstellungen
-
-2. Erstellen Sie eine Datenschutzseite in WordPress:
-   - Navigieren Sie zu "Seiten" > "Erstellen"
-   - Geben Sie "Datenschutz" als Titel ein
-   - Fügen Sie einen Text zur Datenerfassung hinzu
-   - Fügen Sie den Shortcode ` ein
-   - Veröffentlichen Sie die Seite
+1. Navigieren Sie in Matomo in den Bereich Administration > Privatsphäre > Benutzer Opt-Out
+   - Setzen Sie das Häcken bei "Für das Opt Out eigenen Code verwenden" und die Sprache "Deutsch"
+   - Kopieren Sie den Angezeigten Opt Out Code
+   
+2. Erstellen Sie eine Datenschutzseite in WordPress oder editieren Sie eine bestehende:
+   - Fügen Sie einen neuen Block vom Typ HTML hinzu und fügen Sie den Opt Out Code als Inhalt ein.
+   - Speichern Sie ihre Änderungen und öffnen Sie die Webseite.
 
 3. Besuchen Sie die Datenschutzseite und testen Sie die Opt-Out-Funktion:
    - Klicken Sie auf die Option zum Deaktivieren des Trackings
    - Überprüfen Sie, ob der Status korrekt angezeigt wird
+   - Surfen Sie ein wenig auf der Webseite und prüfen Sie im Anschluss, ob weiterhin Daten in Matomo einlaufen oder nicht
    
    **Aufgabe**: Warum ist die Bereitstellung einer Opt-Out-Möglichkeit wichtig für die DSGVO-Konformität?
 
@@ -82,9 +93,3 @@ Beantworten Sie folgende Fragen:
 1. Vergleichen Sie die verschiedenen Methoden zur Integration von Matomo in WordPress. Welche Vor- und Nachteile haben sie?
 2. Wie können Sie überprüfen, ob das Tracking korrekt funktioniert?
 3. Welche zusätzlichen Tracking-Funktionen könnten für eine WordPress-Website nützlich sein?
-
-## Zusatzaufgaben (optional)
-
-1. Implementieren Sie E-Commerce-Tracking für WooCommerce (falls installiert).
-2. Konfigurieren Sie benutzerdefinierte Dimensionen, um WordPress-Benutzerrollen zu tracken.
-3. Erstellen Sie ein benutzerdefiniertes Dashboard in Matomo speziell für die WordPress-Website.

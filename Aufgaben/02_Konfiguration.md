@@ -43,6 +43,7 @@
 
 2. Überprüfen Sie die Archivierungseinstellungen:
    - Berichte archivieren, wenn diese im Browser angezeigt werden: Ja
+   - Für ein schnelleres Arbeiten während der Übungen ändern Sie das Interval für "Archiviere Berichte mindestens alle x Sekunden" auf 120.
 
 ## Abschluss und Reflexion
 
