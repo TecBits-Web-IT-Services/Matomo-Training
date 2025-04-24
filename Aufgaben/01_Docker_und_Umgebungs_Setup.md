@@ -1,4 +1,4 @@
-# Installation Docker
+# Übung 1: Installation Docker
 
 Diese Anleitung führt Sie durch die Installation und Konfiguration von Docker als Vorbereitung für die Schulungsumgebung.
 
@@ -9,28 +9,28 @@ Diese Anleitung führt Sie durch die Installation und Konfiguration von Docker a
 
 ## Variante 1a. Automatische Installation auf von uns bereitgestellten Testrechnern
 
-> Hinweis:
+> **Hinweis:**
 >
-> - sollten Sie nach einem Root-Passwort gefragt werden so verwenden Sie bitte das Passwort des "student" Benutzers
-> - Nach der ausführung des Scriptes müssen Sie sich einmal ab- und wieder anmelden damit die neue Gruppenzuweisung zum tragen kommt.
-> - 
-1. Öffnen Sie den Browser Firefox in der virtuelen Ubuntu Umgebung öffnen die [https://google.de](https://google.de), damit die SSL Datenbank des Browsers erstellt wird.
-2. Öffnen Sie die Linux Kommandozeile (Terminal) und führen Sie folgende Befehle aus:
-```bash
-wget https://raw.githubusercontent.com/TecBits-Web-IT-Services/Matomo-Training/main/Skripte/docker-setup.sh &&\
- chmod +x docker-setup.sh &&\
- ./docker-setup.sh
-```
+> - Sollten Sie nach einem Root-Passwort gefragt werden, so verwenden Sie bitte das Passwort des "student" Benutzers
+> - Nach der Ausführung des Scriptes müssen Sie sich einmal ab- und wieder anmelden, damit die neue Gruppenzuweisung zum Tragen kommt
 
-## Variante 1b. Manuelle Installation von Docker und zuweisen der Benutzergruppe
+1. Öffnen Sie den Browser Firefox in der virtuellen Ubuntu Umgebung und öffnen Sie die [https://google.de](https://google.de), damit die SSL Datenbank des Browsers erstellt wird.
+2. Öffnen Sie die Linux Kommandozeile (Terminal) und führen Sie folgende Befehle aus:
+   ```bash
+   wget https://raw.githubusercontent.com/TecBits-Web-IT-Services/Matomo-Training/main/Skripte/docker-setup.sh &&\
+    chmod +x docker-setup.sh &&\
+    ./docker-setup.sh
+   ```
+
+## Variante 1b. Manuelle Installation von Docker und Zuweisen der Benutzergruppe
 
 Falls Docker und Docker Compose noch nicht installiert sind, führen Sie die folgenden Befehle aus:
 
 ```bash
-#Aktualisieren der Paketlisten
+# Aktualisieren der Paketlisten
 sudo apt update
 
-# Installation notwendiger Pakete und einiger basics
+# Installation notwendiger Pakete und einiger Basics
 sudo apt-get install ca-certificates curl git nano mc htop
 
 # Hinzufügen des Docker GPG-Schlüssels
@@ -70,11 +70,11 @@ mkcert -install
 
 # Hinzufügen des aktuellen Benutzers zur Docker-Gruppe (erfordert Neuanmeldung)
 sudo usermod -aG docker student
-
 ```
-> Hinweis:
+
+> **Hinweis:**
 >
-> Nach der ausführung des Scriptes müssen Sie sich einmal ab- und wieder anmelden damit die neue Gruppenzuweisung zum tragen kommt.
+> Nach der Ausführung des Scriptes müssen Sie sich einmal ab- und wieder anmelden, damit die neue Gruppenzuweisung zum Tragen kommt.
 
 ## 2. Prüfen der Docker Installation
 

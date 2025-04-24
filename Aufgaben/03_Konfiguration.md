@@ -1,4 +1,4 @@
-# Übung 2: Konfiguration und Anpassung von Matomo
+# Übung 3: Konfiguration und Anpassung von Matomo
 
 ## Übungsziele
 - Vertiefte Konfiguration von Matomo
@@ -9,7 +9,7 @@
 - 30-45 Minuten
 
 ## Voraussetzungen
-- Abgeschlossene Übung 1 (Installation)
+- Abgeschlossene Übung 2 (Installation)
 - Laufende Docker-Umgebung mit Matomo
 
 ## Übungsschritte
@@ -21,8 +21,8 @@
 2. Konfigurieren Sie folgende Datenschutzeinstellungen:
    - Anonymisieren Sie IP-Adressen: Wählen Sie "2 Bytes anonymisieren"
    - Benutze die anonymisierte IP-Adresse auch für die Aufbereitung der Besuche: Ja
-   - Do-not-Track Unterstützung: Aktivieren
-   - Erlaubt Benutzern das Tracking Opt-out: Für das Opt-out eigenen Code Verwenden
+   - Do-Not-Track Unterstützung: Aktivieren
+   - Erlaubt Benutzern das Tracking Opt-Out: Für das Opt-Out eigenen Code verwenden
    
 3. Generieren Sie den Opt-Out-Code und speichern Sie ihn für die spätere Verwendung.
 
@@ -43,7 +43,7 @@
 
 2. Überprüfen Sie die Archivierungseinstellungen:
    - Berichte archivieren, wenn diese im Browser angezeigt werden: Ja
-   - Für ein schnelleres Arbeiten während der Übungen ändern Sie das Interval für "Archiviere Berichte mindestens alle x Sekunden" auf 120.
+   - Für ein schnelleres Arbeiten während der Übungen ändern Sie das Intervall für "Archiviere Berichte mindestens alle x Sekunden" auf 120.
 
 ## Abschluss und Reflexion
 

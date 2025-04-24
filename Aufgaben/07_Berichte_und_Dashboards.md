@@ -1,4 +1,4 @@
-# Übung 6: Berichte und Dashboards in Matomo
+# Übung 7: Berichte und Dashboards in Matomo
 
 ## Übungsziele
 - Erstellung und Anpassung von Dashboards in Matomo
@@ -9,7 +9,7 @@
 - 45-60 Minuten
 
 ## Voraussetzungen
-- Abgeschlossene Übungen zur Matomo-Installation und WordPress-Integration
+- Abgeschlossene Übungen 1 bis 6
 - Laufende Docker-Umgebung mit Matomo und Beispieldaten
 
 ## Übungsschritte
@@ -26,7 +26,7 @@
    - Klicken Sie auf "Ok"
 
 3. Fügen Sie Widgets zum Dashboard hinzu:
-   - Klicken Sie auf oben auf den Dashboard-Button und fügen Sie ein Widget üb "EIn Widget hinzufügen" hinzu
+   - Klicken Sie oben auf den Dashboard-Button und fügen Sie ein Widget über "Ein Widget hinzufügen" hinzu
    - Fügen Sie folgende Widgets hinzu:
      - Besucher in Echtzeit (Kategorie: Besucher)
      - Besuche nach lokaler Zeit (Kategorie: Besucher)
@@ -39,14 +39,14 @@
    - Ändern Sie die Größe der Widgets nach Bedarf
    - Klicken Sie auf das Zahnrad-Symbol eines Widgets, um dessen Einstellungen anzupassen
    
-   **Aufgabe**: Gestalten Sie das Dashboard so, dass die wichtigsten Informationen auf einen Blick erkennbar sind.
+   **Aufgabe:** Gestalten Sie das Dashboard so, dass die wichtigsten Informationen auf einen Blick erkennbar sind.
 
 5. Speichern und teilen Sie das Dashboard:
    - Klicken Sie auf "Dashboard speichern"
    - Klicken Sie auf "Teilen" und kopieren Sie den Link
    - Senden Sie den Link an einen anderen Benutzer (simulieren Sie dies, indem Sie den Link in einem anderen Browser oder im Inkognito-Modus öffnen)
    
-   **Aufgabe**: Welche Berechtigungen benötigt ein Benutzer, um ein geteiltes Dashboard anzusehen?
+   **Aufgabe:** Welche Berechtigungen benötigt ein Benutzer, um ein geteiltes Dashboard anzusehen?
 
 ### Teil 2: Segmentierung und Filterung
 
@@ -60,7 +60,7 @@
 
 2. Legen Sie in einem neuen Tab Produkte im Wert von min. 30 Euro in den Warenkorb und warten Sie 2 Minuten bis die Daten aktualisiert wurden. 
 
-   **Aufgabe**: Vergleichen Sie das Verhalten der verschiedenen Segmente. Welche Unterschiede können Sie feststellen?
+   **Aufgabe:** Vergleichen Sie das Verhalten der verschiedenen Segmente. Welche Unterschiede können Sie feststellen?
 
 ### Teil 3: Automatisierte Berichte
 
@@ -73,7 +73,7 @@
    - E-Mail-Zeitplan: HTML
    - Zeitplan: Wöchentlich, montags
    - Speichern Sie den Bericht
-   - Da kein E-Mail Versand in der Testumgebung möglich ist, können Sie sich den konfigurierten Bericht in der Übersicht über den Download Button anzeigen lassen.
+   - Da kein E-Mail-Versand in der Testumgebung möglich ist, können Sie sich den konfigurierten Bericht in der Übersicht über den Download-Button anzeigen lassen.
 
 ## Abschluss und Reflexion
 

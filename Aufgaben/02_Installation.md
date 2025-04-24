@@ -1,4 +1,4 @@
-# Übung 1: Installation und Grundkonfiguration von Matomo mit Docker
+# Übung 2: Installation und Grundkonfiguration von Matomo mit Docker
 
 ## Übungsziele
 - Einrichtung einer Docker-Umgebung mit WordPress und Matomo
@@ -16,54 +16,56 @@
 ## Übungsschritte
 
 ### Teil 1: Einrichtung der DDEV/Docker-Umgebung
-> Hinweis:
+> **Hinweis:**
+>
 > - Bestätigen Sie die Nachfrage "Permission to beam up?" mit Yes / Ja
-> - sollten Sie nach einem Root-Passwort gefragt werden so verwenden Sie bitte das Passwort des "student" Benutzers
+> - Sollten Sie nach einem Root-Passwort gefragt werden, so verwenden Sie bitte das Passwort des "student" Benutzers
 
-1. Öffnen Sie ein Terminal und führen Sie das Installationsskript für die Umgebung aus und wechseln sie im Anschluss in das neu angelegte Arbeitsverzeichnis
+1. Öffnen Sie ein Terminal und führen Sie das Installationsskript für die Umgebung aus und wechseln Sie im Anschluss in das neu angelegte Arbeitsverzeichnis:
    ```bash
-    wget https://raw.githubusercontent.com/TecBits-Web-IT-Services/Matomo-Training/main/Skripte/environment-setup.sh &&\
-      chmod +x environment-setup.sh &&\
-      ./environment-setup.sh
+   wget https://raw.githubusercontent.com/TecBits-Web-IT-Services/Matomo-Training/main/Skripte/environment-setup.sh &&\
+     chmod +x environment-setup.sh &&\
+     ./environment-setup.sh
    
    cd matomo-uebung/Matomo-Training-Env/
    ```
 
-2. Prüfen Sie mit dem Befehl "ddev describe" ob die Umgebung hochgefahren wurde, die Ausgabe sollte ähnlich wie diese aussehen:
-```bash
-┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│ Project: training ~/matomo-uebung/Matomo-Training-Env https://training.ddev.site                                                          │
-│ Docker platform: linux-docker                                                                                                             │
-│ Router: traefik                                                                                                                           │
-├──────────────┬──────┬────────────────────────────────────────────────────────────────────────────────────────────────┬────────────────────┤
-│ SERVICE      │ STAT │ URL/PORT                                                                                       │ INFO               │
-├──────────────┼──────┼────────────────────────────────────────────────────────────────────────────────────────────────┼────────────────────┤
-│ web          │ OK   │ https://training.ddev.site                                                                     │ wordpress PHP 8.3  │
-│              │      │ InDocker -> Host:                                                                              │ Server: apache-fpm │
-│              │      │  - web:80 -> 127.0.0.1:32772                                                                   │ Docroot: ''        │
-│              │      │  - web:443 -> 127.0.0.1:32773                                                                  │ Perf mode: none    │
-│              │      │  - web:8025 -> 127.0.0.1:32782                                                                 │ Node.js: 22        │
-├──────────────┼──────┼────────────────────────────────────────────────────────────────────────────────────────────────┼────────────────────┤
-│ db           │ OK   │ InDocker -> Host:                                                                              │ mariadb:10.11      │
-│              │      │  - db:3306 -> 127.0.0.1:32781                                                                  │ User/Pass: 'db/db' │
-│              │      │                                                                                                │ or 'root/root'     │
-├──────────────┼──────┼────────────────────────────────────────────────────────────────────────────────────────────────┼────────────────────┤
-│ matomo       │ OK   │ https://matomo.training.ddev.site                                                              │                    │
-│              │      │ InDocker:                                                                                      │                    │
-│              │      │  - matomo:80                                                                                   │                    │
-├──────────────┼──────┼────────────────────────────────────────────────────────────────────────────────────────────────┼────────────────────┤
-│ Mailpit      │      │ Mailpit: https://training.ddev.site:8026                                                       │                    │
-│              │      │ Launch: ddev mailpit                                                                           │                    │
-├──────────────┼──────┼────────────────────────────────────────────────────────────────────────────────────────────────┼────────────────────┤
-│ Project URLs │      │ https://training.ddev.site, https://127.0.0.1:32773, http://training.ddev.site,                │                    │
-│              │      │ http://127.0.0.1:32772                                                                         │                    │
-└──────────────┴──────┴────────────────────────────────────────────────────────────────────────────────────────────────┴────────────────────┘
-```
+2. Prüfen Sie mit dem Befehl "ddev describe", ob die Umgebung hochgefahren wurde. Die Ausgabe sollte ähnlich wie diese aussehen:
+   ```bash
+   ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+   │ Project: training ~/matomo-uebung/Matomo-Training-Env https://training.ddev.site                                                          │
+   │ Docker platform: linux-docker                                                                                                             │
+   │ Router: traefik                                                                                                                           │
+   ├──────────────┬──────┬────────────────────────────────────────────────────────────────────────────────────────────────┬────────────────────┤
+   │ SERVICE      │ STAT │ URL/PORT                                                                                       │ INFO               │
+   ├──────────────┼──────┼────────────────────────────────────────────────────────────────────────────────────────────────┼────────────────────┤
+   │ web          │ OK   │ https://training.ddev.site                                                                     │ wordpress PHP 8.3  │
+   │              │      │ InDocker -> Host:                                                                              │ Server: apache-fpm │
+   │              │      │  - web:80 -> 127.0.0.1:32772                                                                   │ Docroot: ''        │
+   │              │      │  - web:443 -> 127.0.0.1:32773                                                                  │ Perf mode: none    │
+   │              │      │  - web:8025 -> 127.0.0.1:32782                                                                 │ Node.js: 22        │
+   ├──────────────┼──────┼────────────────────────────────────────────────────────────────────────────────────────────────┼────────────────────┤
+   │ db           │ OK   │ InDocker -> Host:                                                                              │ mariadb:10.11      │
+   │              │      │  - db:3306 -> 127.0.0.1:32781                                                                  │ User/Pass: 'db/db' │
+   │              │      │                                                                                                 │ or 'root/root'     │
+   ├──────────────┼──────┼────────────────────────────────────────────────────────────────────────────────────────────────┼────────────────────┤
+   │ matomo       │ OK   │ https://matomo.training.ddev.site                                                              │                    │
+   │              │      │ InDocker:                                                                                      │                    │
+   │              │      │  - matomo:80                                                                                   │                    │
+   ├──────────────┼──────┼────────────────────────────────────────────────────────────────────────────────────────────────┼────────────────────┤
+   │ Mailpit      │      │ Mailpit: https://training.ddev.site:8026                                                       │                    │
+   │              │      │ Launch: ddev mailpit                                                                           │                    │
+   ├──────────────┼──────┼────────────────────────────────────────────────────────────────────────────────────────────────┼────────────────────┤
+   │ Project URLs │      │ https://training.ddev.site, https://127.0.0.1:32773, http://training.ddev.site,                │                    │
+   │              │      │ http://127.0.0.1:32772                                                                         │                    │
+   └──────────────┴──────┴────────────────────────────────────────────────────────────────────────────────────────────────┴────────────────────┘
+   ```
+
 ### Teil 2: Test von WordPress
 
-1. Öffnen Sie einen Webbrowser und navigieren Sie zu `https://training.ddev.site`, es sollte eine Wordpress Shop Seite erscheinen
+1. Öffnen Sie einen Webbrowser und navigieren Sie zu `https://training.ddev.site`, es sollte eine WordPress Shop Seite erscheinen.
 
-2. Öffnen Sie einen Webbrowser und navigieren Sie zu `https://training.ddev.site/wp-admin`, es sollte der Wordpress Backend Login erscheinen
+2. Öffnen Sie einen Webbrowser und navigieren Sie zu `https://training.ddev.site/wp-admin`, es sollte der WordPress Backend Login erscheinen.
    - Die Zugangsdaten lauten wie folgt:
      - Benutzername: admin
      - Passwort: Test4711-
@@ -98,23 +100,23 @@
 
 5. Kopieren Sie den generierten Tracking-Code und speichern Sie ihn in einer Textdatei für die spätere Verwendung.
 
-   **Aufgabe**: Analysieren Sie den Tracking-Code. Welche Hauptkomponenten enthält er und welche Funktion haben sie?
+   **Aufgabe:** Analysieren Sie den Tracking-Code. Welche Hauptkomponenten enthält er und welche Funktion haben sie?
 
 ### Teil 4: Überprüfung der Datenbankstruktur
 
-**Aufgabe**: Identifizieren Sie die Tabellen, die zu Matomo gehören?
+**Aufgabe:** Identifizieren Sie die Tabellen, die zu Matomo gehören.
 
 1. Verbinden Sie sich mit dem Datenbank-Container:
    ```bash
    docker exec -it ddev-training-db mysql -u root -proot
    ```
    
-2. Zeigen Sie sich alle Datenbanken an und identifizieren Sie die Matomo Datenbank
+2. Zeigen Sie sich alle Datenbanken an und identifizieren Sie die Matomo Datenbank:
    ```sql
    SHOW DATABASES;
    ```
    
-3. Wechseln Sie in die Matomo Tabelle Zeigen Sie alle Tabellen in der Datenbank an:
+3. Wechseln Sie in die Matomo Tabelle und zeigen Sie alle Tabellen in der Datenbank an:
    ```sql
    USE matomo;
    SHOW TABLES;

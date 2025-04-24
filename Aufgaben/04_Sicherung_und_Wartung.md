@@ -1,4 +1,4 @@
-# Übung 3: Backup und Wartung von Matomo
+# Übung 4: Backup und Wartung von Matomo
 
 ## Übungsziele
 - Erlernen verschiedener Backup-Strategien für Matomo
@@ -9,7 +9,7 @@
 - 30-45 Minuten
 
 ## Voraussetzungen
-- Abgeschlossene Übungen 1 und 2
+- Abgeschlossene Übungen 1 bis 3
 - Laufende Docker-Umgebung mit Matomo
 
 ## Übungsschritte
@@ -22,7 +22,9 @@
    ```
 
 2. Erstellen Sie ein Backup der MySQL-Datenbank:
-> Hinweis: Verwenden Sie das in Aufgabenblock 01 notierte MySQL Root Password
+   > **Hinweis:**
+   >
+   > Verwenden Sie das in Aufgabenblock 01 notierte MySQL Root Password
 
    ```bash
    docker exec ddev-training-db mysqldump -u root -proot db > wp.sql
@@ -50,7 +52,7 @@
 
 ### Teil 3: Wiederherstellung aus einem Backup
 
-1. Simulieren Sie einen Datenverlust, indem Sie eine Konfigurationsänderung in Matomo vornehmen.
+1. Simulieren Sie einen Datenverlust, indem Sie eine Konfigurationsänderung in Matomo vornehmen (z.B. ändern Sie einen Website-Namen oder eine Einstellung).
 
 2. Stellen Sie die Datenbank aus dem Backup wieder her:
    ```bash
@@ -67,7 +69,7 @@
   
 3. Überprüfen Sie die Archivierungseinstellungen unter "Administration" > "System" > "Allgemeine Einstellungen"
    
-   **Aufgabe**: Erklären Sie den Unterschied zwischen Browser-Trigger und Cron-basierter Archivierung. Welche Methode ist für größere Websites zu empfehlen?
+   **Aufgabe:** Erklären Sie den Unterschied zwischen Browser-Trigger und Cron-basierter Archivierung. Welche Methode ist für größere Websites zu empfehlen?
 
 ## Abschluss und Reflexion
 

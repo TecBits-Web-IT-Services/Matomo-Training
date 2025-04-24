@@ -1,4 +1,4 @@
-# Übung 7: Erweiterte Funktionen und Analysen in Matomo
+# Übung 8: Erweiterte Funktionen und Analysen in Matomo
 
 ## Übungsziele
 - Nutzung erweiterter Analysefunktionen in Matomo
@@ -10,7 +10,7 @@
 - 45-60 Minuten
 
 ## Voraussetzungen
-- Abgeschlossene Übungen zu Matomo-Installation und Berichten
+- Abgeschlossene Übungen 1 bis 7
 - Laufende Docker-Umgebung mit Matomo und Beispieldaten
 
 ## Übungsschritte
@@ -24,7 +24,7 @@
    - Muster: "/datenschutzerklaerung/"
    - Speichern Sie das Ziel
    
-   **Aufgabe**: Welche anderen Zieltypen bietet Matomo an und für welche Anwendungsfälle sind sie geeignet?
+   **Aufgabe:** Welche anderen Zieltypen bietet Matomo an und für welche Anwendungsfälle sind sie geeignet?
 
 2. Analysieren Sie die Zielberichte:
    - Navigieren Sie zu "Ziele" > "Übersicht"
@@ -40,7 +40,7 @@
    - Aktiv: Ja
    - Speichern Sie die Dimension
    
-   **Aufgabe**: Welche anderen Bereiche für benutzerdefinierte Dimensionen gibt es und wofür werden sie verwendet?
+   **Aufgabe:** Welche anderen Bereiche für benutzerdefinierte Dimensionen gibt es und wofür werden sie verwendet?
 
 2. Implementieren Sie das Tracking der benutzerdefinierten Dimension:
    - Notieren Sie sich die Dimensions-ID (z.B. 1)
@@ -66,7 +66,7 @@
    - Navigieren Sie zu "Besucher" > "Benutzerrolle"
    - Untersuchen Sie die Verteilung der Benutzerrollen
    
-   **Aufgabe**: Welche anderen benutzerdefinierten Dimensionen könnten für eine WordPress-Website nützlich sein?
+   **Aufgabe:** Welche anderen benutzerdefinierten Dimensionen könnten für eine WordPress-Website nützlich sein?
 
 ### Teil 3: Pfadanalysen
 
@@ -74,14 +74,14 @@
    - Navigieren Sie zu "Verhalten" > "Besuchspfade" > "Pfadanalyse"
    - Untersuchen Sie die häufigsten Pfade durch die Website
    
-   **Aufgabe**: Identifizieren Sie die drei häufigsten Einstiegsseiten und die darauf folgenden Seiten.
+   **Aufgabe:** Identifizieren Sie die drei häufigsten Einstiegsseiten und die darauf folgenden Seiten.
 
 2. Analysieren Sie die Seitenübergänge:
-   - Navigieren Sie zu "Verhalten" > "Transistionen"
+   - Navigieren Sie zu "Verhalten" > "Transitionen"
    - Wählen Sie eine wichtige Seite aus
    - Untersuchen Sie, woher Besucher kommen und wohin sie gehen
    
-   **Aufgabe**: Welche Erkenntnisse können Sie aus den Seitenübergängen gewinnen? Wie könnten Sie die Navigation optimieren?
+   **Aufgabe:** Welche Erkenntnisse können Sie aus den Seitenübergängen gewinnen? Wie könnten Sie die Navigation optimieren?
 
 3. Untersuchen Sie die Einstiegs- und Ausstiegsseiten:
    - Navigieren Sie zu "Verhalten" > "Einstiegsseiten"
@@ -89,7 +89,7 @@
    - Navigieren Sie zu "Verhalten" > "Ausstiegsseiten"
    - Identifizieren Sie Seiten mit hoher Ausstiegsrate
    
-   **Aufgabe**: Welche Maßnahmen könnten Sie ergreifen, um die Absprungrate zu reduzieren und die Ausstiegsrate zu optimieren?
+   **Aufgabe:** Welche Maßnahmen könnten Sie ergreifen, um die Absprungrate zu reduzieren und die Ausstiegsrate zu optimieren?
 
 ### Teil 4: Heatmaps und Session Recordings (falls Plugin verfügbar)
 
@@ -105,7 +105,7 @@
    - Stichprobengröße: 100 Besuche
    - Speichern Sie die Heatmap
    
-   **Aufgabe**: Welche Arten von Heatmaps gibt es und welche Erkenntnisse können Sie daraus gewinnen?
+   **Aufgabe:** Welche Arten von Heatmaps gibt es und welche Erkenntnisse können Sie daraus gewinnen?
 
 3. Erstellen Sie eine Session Recording:
    - Navigieren Sie zu "Verhalten" > "Heatmap & Session Recording"
@@ -114,7 +114,7 @@
    - Stichprobengröße: 10 Besuche
    - Speichern Sie die Aufzeichnung
    
-   **Aufgabe**: Wie können Session Recordings dabei helfen, das Benutzerverhalten besser zu verstehen?
+   **Aufgabe:** Wie können Session Recordings dabei helfen, das Benutzerverhalten besser zu verstehen?
 
 ### Teil 5: A/B-Tests (falls Plugin verfügbar)
 
@@ -132,7 +132,7 @@
    - Konversionsziel: Ein vorher definiertes Ziel
    - Speichern Sie den Test
    
-   **Aufgabe**: Welche Elemente einer Website eignen sich besonders gut für A/B-Tests und warum?
+   **Aufgabe:** Welche Elemente einer Website eignen sich besonders gut für A/B-Tests und warum?
 
 ## Abschluss und Reflexion
 

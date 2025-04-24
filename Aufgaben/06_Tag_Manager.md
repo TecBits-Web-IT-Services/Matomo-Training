@@ -1,4 +1,4 @@
-# Übung 5: Tracking-Code und Tag Manager in WordPress
+# Übung 6: Tracking-Code und Tag Manager in WordPress
 
 ## Übungsziele
 - Implementierung erweiterter Tracking-Funktionen in WordPress
@@ -9,7 +9,7 @@
 - 45-60 Minuten
 
 ## Voraussetzungen
-- Abgeschlossene Übung zur WordPress-Integration
+- Abgeschlossene Übung 5 zur WordPress-Integration
 - Laufende Docker-Umgebung mit WordPress und Matomo
 
 ## Übungsschritte
@@ -66,7 +66,7 @@
 
    - Speichern Sie die Änderungen
    
-   **Aufgabe**: Erklären Sie, wie die verschiedenen Ereignis-Tracking-Funktionen im Code funktionieren und welche Daten sie erfassen.
+   **Aufgabe:** Erklären Sie, wie die verschiedenen Ereignis-Tracking-Funktionen im Code funktionieren und welche Daten sie erfassen.
 
 4. Testen Sie die Tracking-Funktionen:
    - Besuchen Sie die erstellte Seite
@@ -78,11 +78,11 @@
    - Navigieren Sie zu "Verhalten" > "Ereignisse"
    - Analysieren Sie die erfassten Ereignisse nach Kategorien
    
-   **Aufgabe**: Welche zusätzlichen Ereignisse könnten für eine WordPress-Website relevant sein?
+   **Aufgabe:** Welche zusätzlichen Ereignisse könnten für eine WordPress-Website relevant sein?
 
 ### Teil 2: Einrichtung des Matomo Tag Managers
 
-1. Melden Sie sich in Matomo an unter `https://matomo.training.ddev.site` und navigieren Sie oben Rechts zum Tag Manager und aktivieren Sie diesen.
+1. Melden Sie sich in Matomo an unter `https://matomo.training.ddev.site` und navigieren Sie oben rechts zum Tag Manager und aktivieren Sie diesen.
 
 2. Erstellen Sie einen neuen Container:
    - Navigieren Sie zu "Tag Manager"
@@ -91,14 +91,14 @@
    - Wählen Sie "Web" als Kontext
    - Klicken Sie auf "Erstellen"
 
-4. Installieren Sie den Container-Code in WordPress:
+3. Installieren Sie den Container-Code in WordPress:
    - Kopieren Sie den generierten Container-Code
    - Melden Sie sich in WordPress an
    - Navigieren Sie zu "Einstellungen" > "Insert Headers and Footers"
    - Fügen Sie den Container-Code in den Header-Bereich ein
    - Speichern Sie die Änderungen
    
-   **Aufgabe**: Warum wird der Tag Manager-Code im Header und nicht im Footer platziert?
+   **Aufgabe:** Warum wird der Tag Manager-Code im Header und nicht im Footer platziert?
 
 ### Teil 3: Erstellen von Tags im Tag Manager
 
@@ -162,17 +162,17 @@
    - Trigger: "Seitenansicht"
    - Speichern Sie den Tag
 
-4. Veröffentlichen Sie die Änderungen:
+3. Veröffentlichen Sie die Änderungen:
    - Klicken Sie auf "Veröffentlichen" in der linken Seitenleiste
    - Geben Sie eine Versionsbeschreibung ein: "Initiale Tag-Konfiguration"
    - Klicken Sie auf "Veröffentlichen"
 
-5. Testen Sie die Tag Manager-Implementierung:
+4. Testen Sie die Tag Manager-Implementierung:
    - Besuchen Sie Ihre WordPress-Website
    - Interagieren Sie mit verschiedenen Elementen
    - Überprüfen Sie die Ergebnisse in Matomo unter "Verhalten" > "Ereignisse"
    
-   **Aufgabe**: Vergleichen Sie die direkte JavaScript-Implementierung mit der Tag Manager-Implementierung. Welche Vor- und Nachteile haben beide Ansätze?
+   **Aufgabe:** Vergleichen Sie die direkte JavaScript-Implementierung mit der Tag Manager-Implementierung. Welche Vor- und Nachteile haben beide Ansätze?
 
 ### Teil 4: Erstellen von Variablen und Triggern
 
@@ -217,7 +217,7 @@
 
 1. Aktivieren Sie den Debug-Modus im Tag Manager:
    - Navigieren Sie zu "Vorschau/Debug"
-   - Geben Sie die URL einer der Wordpress Seiten ein und Klicken Sie auf "Debug"
+   - Geben Sie die URL einer der WordPress-Seiten ein und klicken Sie auf "Debug"
    - Öffnen Sie Ihre WordPress-Website in einem neuen Tab
 
 2. Führen Sie verschiedene Aktionen auf der Website durch und beobachten Sie die Debug-Ausgabe:
