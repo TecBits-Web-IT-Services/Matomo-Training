@@ -16,21 +16,20 @@
 
 ### Teil 1: Erweitertes JavaScript-Tracking
 
-1. Melden Sie sich in WordPress an unter `http://localhost:8080/wp-admin`
+1. Melden Sie sich in WordPress an unter `https://training.ddev.site/wp-admin`
 
 2. Erstellen Sie eine neue Seite mit verschiedenen Interaktionselementen:
    - Navigieren Sie zu "Seiten" > "Erstellen"
    - Geben Sie "Interaktionstest" als Titel ein
    - Fügen Sie verschiedene Elemente hinzu:
      - Ein Kontaktformular (installieren Sie das Plugin "Contact Form 7")
-     - Ein Video (YouTube-Embed)
      - Mehrere Abschnitte mit Überschriften
      - Einige Bilder
    - Veröffentlichen Sie die Seite
 
 3. Implementieren Sie erweitertes Ereignis-Tracking:
    - Navigieren Sie zu "Einstellungen" > "Insert Headers and Footers"
-   - Fügen Sie folgenden JavaScript-Code im Footer-Bereich ein:
+   - Fügen Sie folgenden JavaScript-Code im Footer-Bereich vor dem trackPageView-Event ein:
 
    ```javascript
    <script>
@@ -83,14 +82,9 @@
 
 ### Teil 2: Einrichtung des Matomo Tag Managers
 
-1. Melden Sie sich in Matomo an unter `http://localhost:8081`
+1. Melden Sie sich in Matomo an unter `https://matomo.training.ddev.site` und navigieren Sie oben Rechts zum Tag Manager und aktivieren Sie diesen.
 
-2. Aktivieren Sie den Tag Manager:
-   - Navigieren Sie zu "Administration" > "Plattform" > "Plugins"
-   - Suchen Sie nach "TagManager"
-   - Klicken Sie auf "Aktivieren"
-
-3. Erstellen Sie einen neuen Container:
+2. Erstellen Sie einen neuen Container:
    - Navigieren Sie zu "Tag Manager"
    - Klicken Sie auf "Container erstellen"
    - Name: "WordPress Container"
@@ -108,16 +102,7 @@
 
 ### Teil 3: Erstellen von Tags im Tag Manager
 
-1. Erstellen Sie einen Tag für das Matomo-Tracking:
-   - Navigieren Sie zum Tag Manager > "Tags" > "Tag erstellen"
-   - Name: "Matomo Tracking"
-   - Typ: "Matomo Analytics"
-   - Matomo-URL: `http://matomo:80/`
-   - Site-ID: 1
-   - Trigger: "Alle Seiten"
-   - Speichern Sie den Tag
-
-2. Erstellen Sie einen Tag für Ereignis-Tracking:
+1. Erstellen Sie einen Tag für Ereignis-Tracking:
    - Navigieren Sie zu "Tags" > "Tag erstellen"
    - Name: "Scroll-Tracking"
    - Typ: "Benutzerdefiniertes HTML"
@@ -150,10 +135,10 @@
    </script>
    ```
    
-   - Trigger: "Alle Seiten"
+   - Trigger: "Seitenansicht"
    - Speichern Sie den Tag
 
-3. Erstellen Sie einen Tag für Formular-Tracking:
+2. Erstellen Sie einen Tag für Formular-Tracking:
    - Navigieren Sie zu "Tags" > "Tag erstellen"
    - Name: "Formular-Tracking"
    - Typ: "Benutzerdefiniertes HTML"
@@ -174,11 +159,11 @@
    </script>
    ```
    
-   - Trigger: "Alle Seiten"
+   - Trigger: "Seitenansicht"
    - Speichern Sie den Tag
 
 4. Veröffentlichen Sie die Änderungen:
-   - Klicken Sie auf "Veröffentlichen" in der oberen rechten Ecke
+   - Klicken Sie auf "Veröffentlichen" in der linken Seitenleiste
    - Geben Sie eine Versionsbeschreibung ein: "Initiale Tag-Konfiguration"
    - Klicken Sie auf "Veröffentlichen"
 
@@ -204,7 +189,6 @@
    - Navigieren Sie zu "Trigger" > "Trigger erstellen"
    - Name: "Klick auf Buttons"
    - Typ: "Klick - Alle Elemente"
-   - Klick-Ziel: "Nur Links, Buttons und Formularelemente"
    - Bedingungen: "Element-Klasse enthält button"
    - Speichern Sie den Trigger
 
@@ -212,7 +196,7 @@
    - Navigieren Sie zu "Tags" > "Tag erstellen"
    - Name: "Button-Klick-Tracking"
    - Typ: "Matomo Analytics"
-   - Aktion: "Ereignis verfolgen"
+   - Tracking Typ: "Ereignis"
    - Ereigniskategorie: "Interaktion"
    - Ereignisaktion: "Klick"
    - Ereignisname: {{Seitentitel}}
@@ -228,14 +212,12 @@
    - Besuchen Sie Ihre WordPress-Website
    - Klicken Sie auf verschiedene Buttons
    - Überprüfen Sie die Ergebnisse in Matomo
-   
-   **Aufgabe**: Welche weiteren Variablen könnten für das Tracking in WordPress nützlich sein?
 
 ### Teil 5: Debugging und Validierung
 
 1. Aktivieren Sie den Debug-Modus im Tag Manager:
-   - Navigieren Sie zu "Debug"
-   - Klicken Sie auf "Debug-Modus starten"
+   - Navigieren Sie zu "Vorschau/Debug"
+   - Geben Sie die URL einer der Wordpress Seiten ein und Klicken Sie auf "Debug"
    - Öffnen Sie Ihre WordPress-Website in einem neuen Tab
 
 2. Führen Sie verschiedene Aktionen auf der Website durch und beobachten Sie die Debug-Ausgabe:
@@ -244,24 +226,10 @@
    - Formularübermittlungen
    - Scrollen
 
-3. Überprüfen Sie die korrekte Implementierung mit dem Matomo-Tracking-Checker:
-   - Navigieren Sie zu "Administration" > "Messung" > "Tracking-Code"
-   - Scrollen Sie nach unten zum Abschnitt "Tracking-Code überprüfen"
-   - Geben Sie die URL Ihrer WordPress-Website ein
-   - Klicken Sie auf "Überprüfen"
-   
-   **Aufgabe**: Welche Probleme können bei der Implementierung des Trackings auftreten und wie können sie behoben werden?
-
 ## Abschluss und Reflexion
 
 Beantworten Sie folgende Fragen:
 
-1. Welche Vorteile bietet der Matomo Tag Manager gegenüber der direkten Implementierung von Tracking-Code?
+1. Welche Vorteile bietet der Matomo Tag Manager gegenüber der direkten Implementierung des Tracking-Codes?
 2. Wie können Sie sicherstellen, dass das Tracking DSGVO-konform ist?
 3. Welche Arten von Benutzerinteraktionen sind besonders wertvoll für die Analyse einer WordPress-Website?
-
-## Zusatzaufgaben (optional)
-
-1. Implementieren Sie ein A/B-Testing-Setup mit dem Tag Manager.
-2. Erstellen Sie ein benutzerdefiniertes Dashboard in Matomo, das speziell auf WordPress-Metriken ausgerichtet ist.
-3. Implementieren Sie Content-Tracking, um zu messen, welche Inhalte am meisten gelesen werden.

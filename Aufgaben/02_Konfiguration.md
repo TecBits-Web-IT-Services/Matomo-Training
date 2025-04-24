@@ -50,8 +50,7 @@
 Beantworten Sie folgende Fragen:
 
 1. Welche Datenschutzeinstellungen sind für eine DSGVO-konforme Nutzung von Matomo besonders wichtig?
-2. Wie würden Sie die Benutzerrollen in einem Unternehmen mit verschiedenen Abteilungen (Marketing, IT, Management) strukturieren?
-3. Welche Konfigurationseinstellungen sollten regelmäßig überprüft werden?
+2. Welche Konfigurationseinstellungen sollten regelmäßig überprüft werden?
 
 ## Zusatzaufgaben (optional)
 

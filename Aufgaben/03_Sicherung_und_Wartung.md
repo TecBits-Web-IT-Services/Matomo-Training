@@ -59,17 +59,13 @@
 
 3. Überprüfen Sie, ob die Änderungen rückgängig gemacht wurden.
    
-### Teil 5: Wartungsaufgaben
+### Teil 4: Wartungsaufgaben
 
 1. Navigieren Sie in Matomo zu "Administration" > "System" > "Diagnose"
 
 2. Führen Sie einen Systemcheck durch und notieren Sie alle Warnungen oder Fehler.
-
-3. Navigieren Sie zu "Administration" > "System" > "Datenbank"
-
-4. Führen Sie eine Datenbankoptimierung durch.
-   
-5. Überprüfen Sie die Archivierungseinstellungen unter "Administration" > "System" > "Allgemeine Einstellungen"
+  
+3. Überprüfen Sie die Archivierungseinstellungen unter "Administration" > "System" > "Allgemeine Einstellungen"
    
    **Aufgabe**: Erklären Sie den Unterschied zwischen Browser-Trigger und Cron-basierter Archivierung. Welche Methode ist für größere Websites zu empfehlen?
 
