@@ -1,4 +1,4 @@
-# Übung 8: Erweiterte Funktionen und Analysen in Matomo
+# Übung 7: Erweiterte Funktionen und Analysen in Matomo
 
 ## Übungsziele
 - Nutzung erweiterter Analysefunktionen in Matomo

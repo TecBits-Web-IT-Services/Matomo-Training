@@ -1,4 +1,4 @@
-# Übung 6: Tracking-Code und Tag Manager in WordPress
+# Übung 8: Tracking-Code und Tag Manager in WordPress
 
 ## Übungsziele
 - Implementierung erweiterter Tracking-Funktionen in WordPress

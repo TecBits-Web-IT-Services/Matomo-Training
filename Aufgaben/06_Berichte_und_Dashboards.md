@@ -1,4 +1,4 @@
-# Übung 7: Berichte und Dashboards in Matomo
+# Übung 6: Berichte und Dashboards in Matomo
 
 ## Übungsziele
 - Erstellung und Anpassung von Dashboards in Matomo
